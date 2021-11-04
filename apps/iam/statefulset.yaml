@@ -20,7 +20,7 @@ spec:
 
       initContainers:
         - name: iam-init
-          image: docker.io/ergon/airlock-iam:latest-7.4
+          image: docker.ergon.ch/airlock/airlockiam:7.4
           imagePullPolicy: IfNotPresent
           args: ["init"]
           volumeMounts:
@@ -29,7 +29,7 @@ spec:
               subPath: iam
       containers:
         - name: iam
-          image: docker.io/ergon/airlock-iam:latest-7.4
+          image: docker.ergon.ch/airlock/airlockiam:7.4
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
